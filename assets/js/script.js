@@ -31,45 +31,45 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // LazyLoad img/iframe/video
-document.addEventListener("DOMContentLoaded", function () {
-    const tags = ['img', 'iframe', 'video'];
+//document.addEventListener("DOMContentLoaded", function () {
+//    const tags = ['img', 'iframe', 'video'];
 
-    tags.forEach(tag => {
-        const elements = document.querySelectorAll(tag);
+//    tags.forEach(tag => {
+//        const elements = document.querySelectorAll(tag);
 
-        elements.forEach(element => {
-            if (element.hasAttribute('src') && !element.hasAttribute('data-src')) {
-                const srcValue = element.getAttribute('src');
+//        elements.forEach(element => {
+//            if (element.hasAttribute('src') && !element.hasAttribute('data-src')) {
+//                const srcValue = element.getAttribute('src');
 
-                element.setAttribute('data-src', srcValue);
+//                element.setAttribute('data-src', srcValue);
 
-                element.removeAttribute('src');
+//                element.removeAttribute('src');
 
-                element.classList.add('lazy');
-            }
+//                element.classList.add('lazy');
+//            }
 
-            if (tag === 'video') {
-                const sources = element.querySelectorAll('source');
+//            if (tag === 'video') {
+//                const sources = element.querySelectorAll('source');
 
-                sources.forEach(source => {
-                    if (source.hasAttribute('src') && !source.hasAttribute('data-src')) {
-                        const srcValue = source.getAttribute('src');
-                        source.setAttribute('data-src', srcValue);
-                        source.removeAttribute('src');
-                    }
-                });
-            }
-        });
-    });
+//                sources.forEach(source => {
+//                    if (source.hasAttribute('src') && !source.hasAttribute('data-src')) {
+//                        const srcValue = source.getAttribute('src');
+//                        source.setAttribute('data-src', srcValue);
+ //                       source.removeAttribute('src');
+ //                   }
+ //               });
+ //           }
+ //       });
+ //   });
 
-    var lazyLoadInstance = new LazyLoad({
-        elements_selector: ".lazy"
-    });
+//    var lazyLoadInstance = new LazyLoad({
+ //       elements_selector: ".lazy"
+//    });
 
-    $(document).on("init", ".slick-slider", function (e, slick) {
-        lazyLoadInstance.update();
-    });
-});
+ //   $(document).on("init", ".slick-slider", function (e, slick) {
+//        lazyLoadInstance.update();
+//    });
+//});
 
 $('.slick-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     var activeSlide = $(slick.$slides[currentSlide]);
