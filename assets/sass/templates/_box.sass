@@ -1,0 +1,79 @@
+.box
+    &__wrap
+        position: relative
+        max-width: rem-calc(480)
+        width: 100%
+        height: rem-calc(480)
+        padding: 0 rem-calc(15)
+        padding-top: rem-calc(95)
+        overflow: hidden
+        @include respond(medium)
+            max-width: 100%
+            height: rem-calc(380)
+            padding-top: rem-calc(60)
+        @include respond(small)
+            height: rem-calc(280)
+        &:hover .box__img
+            transform: scale(1.05)
+    &__wrap
+        &-1
+            background-color: $color-10
+        &-2
+            background-color: $color-11
+        &-3
+            background-color: $color-13
+        &-4
+            background-color: $color-12
+        &-5
+            background-color: $color-14
+        &-6
+            background-color: $color-15
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 1
+    &__title
+        max-width: rem-calc(340)
+        width: 100%
+        margin: 0 auto
+        border-top: rem-calc(1) solid $color-1
+        position: relative
+        z-index: 2
+        @include respond(small)
+            max-width: 100%
+        &-wrap
+            font-size: rem-calc(32)
+            font-weight: 700
+            line-height: 1.5
+            letter-spacing: rem-calc(-1)
+            color: $color-1
+            max-width: rem-calc(189)
+            padding-left: rem-calc(32)
+            margin-top: rem-calc(30)
+            position: relative
+            @include respond(small)
+                max-width: 100%
+                font-size: rem-calc(30)
+            &::after
+                content: ""
+                position: absolute
+                top: rem-calc(17)
+                left: 0
+                width: rem-calc(12)
+                height: rem-calc(12)
+                border-radius: 50%
+                background-color: $color-5
+    &__img
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        height: 100%
+        width: 100%
+        transition: all .3s ease 0s
+        img
+            height: 100%

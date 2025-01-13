@@ -1,0 +1,54 @@
+// -------------------- DEFAULT --------------------
+$base-font-size: 10px
+
+html
+  font-size: $base-font-size
+  scroll-behavior: smooth
+// -------------------- DEFAULT --------------------
+
+// -------------------- FOR THE WIDTH OF THE CONTAINER AS IN THE LAYOUT --------------------
+$width-container: 1210px
+// -------------------- FOR THE WIDTH OF THE CONTAINER AS IN THE LAYOUT --------------------
+
+// -------------------- CONVERT PX TO REM --------------------
+@function rem-calc($values...)
+  $result: ()
+  @each $value in $values
+    @if type-of($value) == 'number'
+      $result: append($result, ($value / 10) * 1rem)
+    @else if type-of($value) == 'string' and str-index($value, 'px')
+      $value: str-slice($value, 1, -2) * 1
+      $result: append($result, ($value / 10) * 1rem)
+    @else if type-of($value) == 'list'
+      $converted-values: ()
+      @each $item in $value
+        @if type-of($item) == 'number'
+          $converted-values: append($converted-values, ($item / 10) * 1rem)
+        @else if type-of($item) == 'string' and str-index($item, 'px')
+          $item: str-slice($item, 1, -2) * 1
+          $converted-values: append($converted-values, ($item / 10) * 1rem)
+        @else
+          $converted-values: append($converted-values, $item)
+      $result: append($result, $converted-values)
+    @else
+      $result: append($result, $value) 
+  @return $result
+// -------------------- CONVERT PX TO REM --------------------
+
+// -------------------- FOR CONTAINER CALCULATION --------------------
+@function px-to-rem($px, $base: 10px) 
+  @return ($px / $base) + rem
+
+$width-container-rem: px-to-rem($width-container) 
+
+.grid-container 
+  max-width: $width-container-rem 
+// -------------------- FOR CONTAINER CALCULATION --------------------
+
+// -------------------- TO LOAD THE PAGE --------------------
+body.hidden 
+  opacity: 0
+  transition: opacity 0.2s ease
+  @include respond(small)
+    opacity: 1
+// -------------------- TO LOAD THE PAGE --------------------

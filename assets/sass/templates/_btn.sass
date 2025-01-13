@@ -1,0 +1,44 @@
+.btn
+    &__wrap
+        display: inline-block
+        font-size: rem-calc(14)
+        line-height: 1.4
+        font-weight: 700
+        color: $color-1
+        padding: rem-calc(15.21 27.94)
+        background-color: $color-2
+        border-radius: rem-calc(100)
+        transition: all .3s ease 0s
+        text-transform: uppercase
+        &:hover 
+            background-color: $color-5
+
+.btn-2,
+.btn-3
+    &__wrap
+        display: inline-block
+        font-size: rem-calc(16)
+        line-height: 1.4
+        font-weight: 700
+        color: $color-2
+        transition: all .3s ease 0s
+        &:hover 
+            color: $color-5
+
+.btn-3
+    &__wrap
+        background-color: transparent
+        color: $color-5
+        padding: unset
+        &:hover 
+            background-color: transparent
+            color: $color-2
+
+.btn-4
+    &__wrap
+        background-color: $color-5
+        color: $color-1
+        padding: rem-calc(10 30)
+        border-radius: 0
+        &:hover
+            background-color: $color-2

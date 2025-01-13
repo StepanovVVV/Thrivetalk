@@ -1,0 +1,68 @@
+.gallery 
+    padding-top: rem-calc(80)
+    padding-bottom: rem-calc(80)
+    background-color: $color-16
+    @include respond(small)
+        padding-top: rem-calc(60)
+        padding-bottom: rem-calc(20)
+    &__wrap
+        &-title
+            text-align: center
+            text-transform: uppercase
+    &__container
+        margin-top: rem-calc(40)
+    &__slider-wrap
+        height: 100%
+        @include respond(medium)
+            padding: 0 rem-calc(15)
+        @include respond(small)
+            padding: 0 rem-calc(5)
+    &__slider
+        overflow: hidden
+        border-radius: rem-calc(20)
+    &__slide
+        max-width: rem-calc(280)
+        width: 100%
+        height: rem-calc(400)
+        margin: 0 auto
+        position: relative
+        cursor: pointer
+        border-radius: rem-calc(20)
+        overflow: hidden
+        @media (max-width: 759px)
+            max-width: 100%
+        &:hover .gallery__info
+            opacity: 1
+            visibility: visible
+    &__img
+        height: 100%
+        img
+            height: 100%
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: center
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 100%
+        width: 100%
+        padding: rem-calc(30 15)
+        background-color: $color-10
+        transition: all .3s ease 0s
+        opacity: 0
+        visibility: hidden
+        @include respond(medium)
+            opacity: 1
+            visibility: visible
+    &__title
+        font-size: rem-calc(22)
+        font-weight: 700
+        line-height: 1.5
+        color: $color-1
+    &__text
+        font-size: rem-calc(18)
+        font-weight: 600
+        line-height: 1.5
+        color: $color-1
+        margin-top: rem-calc(20)
