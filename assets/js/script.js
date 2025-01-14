@@ -36,6 +36,7 @@ $(document).ready(function () {
         var $img = $(this);
         var src = $img.attr('src');
         $img.attr('data-lazy-src', src);
+        $img.attr('loading', 'lazy'); // Добавляем атрибут loading="lazy"
         $img.removeAttr('src');
         $img.addClass('lazyload');
     });
