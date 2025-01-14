@@ -10714,3 +10714,15 @@ if ( typeof noGlobal === "undefined" ) {
 
 return jQuery;
 } );
+
+$.event.special.touchstart = {
+    setup: function(_, ns, handle) {
+        this.addEventListener("touchstart", handle, { passive: true });
+    }
+};
+
+$.event.special.touchmove = {
+    setup: function(_, ns, handle) {
+        this.addEventListener("touchmove", handle, { passive: true });
+    }
+};
