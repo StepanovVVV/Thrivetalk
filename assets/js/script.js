@@ -100,12 +100,12 @@ function showPageAfterDelay() {
     if (document.readyState === 'complete') {
         setTimeout(function () {
             document.body.classList.remove('hidden');
-        }, 500);
+        }, 600);
     } else {
         window.addEventListener('load', function () {
             setTimeout(function () {
                 document.body.classList.remove('hidden');
-            }, 500);
+            }, 600);
         });
     }
 }
