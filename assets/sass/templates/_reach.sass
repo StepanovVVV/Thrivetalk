@@ -1,0 +1,63 @@
+.reach
+    padding-top: rem-calc(80)
+    padding-bottom: rem-calc(80)
+    position: relative
+    overflow: hidden
+    @include respond(small)
+        padding-top: rem-calc(60)
+        padding-bottom: rem-calc(60)
+    &::before
+        position: absolute
+        content: ""
+        height: 100%
+        max-width: 100%
+        width: 100%
+        z-index: -1
+        right: 0
+        bottom: 0
+        background: url(../../assets/image/contact-us.jpg) center center/cover no-repeat
+        background-color: $color-7
+        @include respond(small)
+            background-image: none
+            background: $color-5
+            background: linear-gradient(209deg, $color-5 0%, $color-2 50%, $color-3 100%)
+    &__wrap
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 100%
+    &__wrapper
+        p.reach__text
+            font-size: rem-calc(18)
+            line-height: 1.5
+            font-weight: 400
+            color: $color-4
+    &__items
+        margin-top: rem-calc(30)
+        margin-bottom: rem-calc(15)
+        >li+li
+            margin-top: rem-calc(15)
+        .reach__text
+            padding-left: rem-calc(18)
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                width: rem-calc(10)
+                height: rem-calc(10)
+                border-radius: 50%
+                background-color: $color-5
+    &__title
+        font-size: rem-calc(30)
+        line-height: 1.5
+        font-weight: 700
+        color: $color-4
+        text-transform: uppercase
+        @include respond(small)
+            font-size: rem-calc(28)
+    .grid-x
+        @include respond(small)
+            row-gap: rem-calc(20)
